@@ -1,0 +1,15 @@
+{
+  "name": "curso_udemy",
+  "version": "1.0.0",
+  "description": "Repositório de estudos",
+  "main": "a1_Modulo1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sana",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "lodash": "^4.17.15"
+  }
+}
