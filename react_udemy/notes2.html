@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="notes_script.js"></script>
+    <title>Boas Práticas JS</title>
+</head>
+<body>
+    <p><button onclick="window.location.href = 'notes1.html'">notes1.html</button>
+       <button onclick="window.location.href = 'notes3.html'">notes3.html</button></p>
+    <h3>Botões com funções invocadas</h3>
+    <p>Clique para entrar e alterar o HTML: <button onclick="entrar()">Entrar</button></p>
+    <div id="area">
+        HTML modificável
+    </div>
+    <h4>Função com estrutura condicional Switch</h4>
+    <div id="options">
+        HTML modificável
+    </div>
+    <br/>
+    <button onclick="select(prompt('Fruta?'));">selecionar</button>
+    <br/>
+    <p>É possível também criar funções com temporizadores. Com as funções setInterval ou setTimeout</p>
+    <div id="temp">
+        HTML Modificável. Clique para ativar o temporizador.
+    </div>
+    <br/>
+    <button onclick="interval()">setInterval</button>
+    <button onclick="timeout()">setTimeout</button>
+    <button onclick="cancel()">Cancelar setInterval</button>
+</body>
+<script>
+    options();
+</script>
+</html>

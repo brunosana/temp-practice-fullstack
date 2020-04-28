@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="notes_script2.js"></script>
+    <title>Storage WEB</title>
+</head>
+<body>
+    <h3>Web Storage</h3>
+    <p>Cookie: Valores que podemos salvar no navegador. (Ex.Ultima página que acessou, ultimo dia etc...) o cookie fica salvo</p>
+    <p>Sessions: São temporárias, armazena valores enquanto o navegador está aberto (Ex. logout do banco ao fechar o navegador)</p>
+    <p>Então existem duas formas de salvar no webstorage, o <b>localStorage</b> e o <b>sessionStorage</b></p>
+    <p>Pra guardar itens no localStorage usamos o <b>localStorage.setItem("chave", "valor")</b> ou <b>localStorage.chave = "valor"</b></p>
+    <p>Pra capturar itens no localStorage usamos o <b>localStorage.getItem("chave)</b> ou <b>localStorage.chave = "valor"</b></p>
+    <p>Para excluir itens no localStorage usamos o <b>localStorage.removeItem</b></p>
+    <p><button onclick="saveLocal()">Salvar Item</button>
+       <button onclick="getLocal()">Capturar Item</button>
+       <button onclick="deleteLocal()">Deletar Item</button></p>
+    <p>Os dados ficam salvos mesmo quando o navegador é fechado.</p>
+    
+
+</body>
+</html>

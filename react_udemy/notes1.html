@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="notes_script.js"></script>
+    <title>JS Testes</title>
+</head>
+<body>
+    <h2>Repositório de Estudos e Testes em HTML, JS e CSS</h2>
+    <h3>Refreshs e Redirects</h3>
+    <button onclick="window.location.href='http://twitter.com/brunosana2'">Redirect twitter do BrunoSana</button>
+    <button onclick="window.location.href='index.html'">Redirect para página index.html</button>
+    <button onclick="window.location.href=window.location.href" >Refresh ou Atualizar</button>
+    <h3>Modificando HTML</h3>
+    <p>É possível modificar o html. Ex:</p>
+    <div id="area">
+        Area Modificável do HTML.
+        O elemento sobrescreverá todo o conteúdo ao clicar.
+    </div>
+<br/><br/>
+    <button onclick="document.getElementById('area').innerHTML = prompt('Texto a Modificar');">Modificar</button>
+    <p>O HTML é modificado da forma que você quiser: <button onclick="this.innerHTML=prompt('Nome do botao');">Modificar Botão</button></p>
+    <br/><br/><br/>
+    <p>Como uma boa prática de programação, convém usar o JavaScript em um arquivo separado e invocar as suas funções.</p>
+    <br/><p><button onclick="window.location.href='notes2.html'" >HTML com boas práticas</button></p>
+</body>
+</html>
