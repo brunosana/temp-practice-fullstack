@@ -7,7 +7,8 @@
     <title>Storage WEB</title>
 </head>
 <body>
-    <h3>Web Storage</h3>
+    <h3>Web Storage e Desconstrução</h3>
+    <h4>webstorage</h4>
     <p>Cookie: Valores que podemos salvar no navegador. (Ex.Ultima página que acessou, ultimo dia etc...) o cookie fica salvo</p>
     <p>Sessions: São temporárias, armazena valores enquanto o navegador está aberto (Ex. logout do banco ao fechar o navegador)</p>
     <p>Então existem duas formas de salvar no webstorage, o <b>localStorage</b> e o <b>sessionStorage</b></p>
@@ -18,7 +19,16 @@
        <button onclick="getLocal()">Capturar Item</button>
        <button onclick="deleteLocal()">Deletar Item</button></p>
     <p>Os dados ficam salvos mesmo quando o navegador é fechado.</p>
+    <h4>Desconstrução (Objetos e Arrays)</h4>
+    <h5>Objetos</h5>
+    <p>Suponha o objeto:</p>
+    <p>var obj = {nome: "Bruno", sobrenome: "Santana", idade: 22}</p>
+    <p>Use <b>var { nome } = obj</b> para capturar apenas o parâmetro nome do objeto <b>obj</b></p>
+    <p><button onclick="brokenObj()">Experimentar</button></p>
+    <h5>Arrays</h5>
+    <p>Desconstrução em Arrays podemos capturar cada elemento pela posição. Suponha</p>
+    <p>var array = ["oi", "tchau", "adeus", "que a porta bata onde o sol não bate"</p>
+    <p>Use <b>let {2:tchau} = array</b> ou <b>let [primeiroElemento, segundoElemento] = array</b> para capturar, respectivamente, o elemento pelo índice direto ou crescente.</p>
     
-
 </body>
 </html>
