@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="notes_script3.js"></script>
+    <title>Rest e Spread</title>
+</head>
+<body>
+    <p><button onclick="window.location.href = 'notes3.html'">notes3.html</button>
+       <button onclick="window.location.href = 'notes5.html'">notes5.html</button></p>
+    <h3>Operadores Rest e Spread</h3>
+    <h4>Spread Operator</h4>
+    <p>Retorna um conjunto de dados</p>
+    <p>Suponha</p>
+    <p>var vetor = [1, 2, 3, 4, 5, 6]</p>
+    <p>Use o operador <b>...vetor</b> para retornar elementos e inseri-los:</p>
+    <p>var vetor_segundo = [...vetor, 7, 8, 9, 10]</p>
+    <p>console.log(vetor_segundo) => 1 2 3 4 5 6 7 8 9 10</p>
+    <p>Também podemos fazer com Objetos.</p>
+    <p><button onclick="spread()">Testar Spread Operator</button></p>
+    <h4>Rest Operator</h4>
+    <p>Recebe um conjunto de dados</p>
+    <p>Suponha uma função que receba N nomes, faça:</p>
+    <p>function receber(...nomes){ console.log(nomes)}</p>
+    <p>receber("bruno", "rafael", "victor", "joão");</p>
+    <button onclick="rest('bruno', 'rafael', 'joão', 'victor', 'gabos', 'marcelo')">Testar Rest Operator</button>
+    <p><button onclick="restSpread(['bruno', 'josé', 'larissa'], 'joelma', 'nazario')">Testar o Rest e Spread</button></p>
+</body>
+</html>
