@@ -180,3 +180,112 @@ Se for do seu desejo, poderá usar o smooth para suavizar o scroll xD
 
 
 ## Firebase
+
+Firebase é um serviço da google que hospeda banco de dados não relacional.
+
+Para usar no react, precisamos instalar o pacote:
+
+    npm install --save firebase
+
+Importamos o firebase para o arquivo que iremos usar:
+
+    import firebase from 'firebase';
+
+E após o trecho **firebase.initializeApp(config);** podemos capturar dados do banco:
+
+    firebase.database().ref('props').on('value', (snapshot) => {
+      let temp = this.state;
+      temp.prop = snapshot.val();
+      this.setState(temp);
+    });
+
+Nesse caso estamos capturando o campo __props__ do banco e usando a função __on__ para atribuir o valor capturado à variável __prop__ do __state__.
+
+**OBS: A função `on` é ativada a qualquer alteração, então qualquer alteração no banco a função é invocada e os dados alterados em tempo real. Caso o sistema precise buscar apenas uma vez as informações no banco usamos a função `once`.**
+
+Para capturar valores não diretos, podemos usar o comando __child__.
+
+Ex: Capturar os valores do objeto usuários do íncide 1:
+
+    firebase.database().ref('users').child(1).on('value', snapshot => {
+        let name = snapshot.val().name;
+        let age = snapshot.val().age;
+    });
+
+Para **__inserir/alterar__** os valores, usamos a função **__set__**:
+
+    firebase.database().ref('token').set(this.state.tokenInput);
+
+Para **__alterar mais de uma propriedade__** (ex. um objeto inteiro) é só passar ao comando set todo o objeto, ou alterar propriedade por propriedade:
+
+    firebase.database().ref('users').child(1).child('idade').set(this.state.idadeInput);
+
+Para **__excluir__** os dados é só usar o método remove(). Serve tanto para remover um objeto ou uma propriedade específica do objeto:
+
+    firebase.database().ref('users').child(1).remove();
+
+Ou
+
+    firebase.database().ref('users').child(1).child('idade').remove();
+
+Para **__inserir um dado novo__** e atribuir um ID a ele:
+
+    let users = firebase.database().ref('users');
+    let key = users.push().key;
+    firebase.database().ref('users').child(key).set({
+        name: 'nome',
+        age: 00,
+        nick: 'nick'
+    });
+
+Para **capturar os valores em lista** :
+
+    firebase.database().ref('users').on('value', snapshot=>{
+        let temp = this.state;
+        temp.lista = [];
+        
+        snapshot.foreach(childItem => {
+            temp.lista.push({
+                name: childItem.name,
+                age: childItem.age,
+                nick: childItem.nick
+            })
+        })
+        this.setState(temp);
+    })
+
+
+### Autenticação com Firebase
+
+#### Criando um usuário
+
+Precisa ter ativado a opção `Email and Password` na plataforma do firebase.
+
+Utilizando um form simples, utilizamos o método `createUserWithEmailAndPassword`:
+
+    firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.senha)
+    .then( () => {
+        //Sucess
+    })
+    .catch(err =>{
+        //Erro
+    })
+
+
+### Efetuando o Login
+
+É possível que já haja algum usuário logado no sistema, então antes, no construtor, iremos chamar o método `signOut` para deslogarmos quem estiver logado:
+
+    firebase.auth().signOut();
+
+Efetue o login com o método `signInWithEmailAndPassword`
+
+    firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.senha)
+    .then( () => {
+        //Sucess
+    })
+    .catch(err =>{
+        //Erro
+    })
+
+Para efetuar o **logout** é só chamar o método `signOut` acima.
